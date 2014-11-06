@@ -21,12 +21,11 @@ public class VoiceCallFragment extends OutgoingCallFragment {
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        switch (v.getId()) {
-            case R.id.muteDynamicButton:
-                muteSound();
-                break;
-            default:
-                break;
+        int i = v.getId();
+        if (i == R.id.muteDynamicButton) {
+            muteSound();
+
+        } else {
         }
     }
 

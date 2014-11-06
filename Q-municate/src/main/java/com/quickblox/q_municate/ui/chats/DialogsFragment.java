@@ -151,10 +151,10 @@ public class DialogsFragment extends BaseFragment implements LoaderManager.Loade
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_add:
-                startNewDialogPage();
-                break;
+        int i = item.getItemId();
+        if (i == R.id.action_add) {
+            startNewDialogPage();
+
         }
         return true;
     }

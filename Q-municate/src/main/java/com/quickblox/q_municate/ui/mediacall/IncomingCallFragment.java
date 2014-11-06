@@ -83,15 +83,14 @@ public class IncomingCallFragment extends BaseFragment implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.acceptCallButton:
-                accept();
-                break;
-            case R.id.denyCallButton:
-                reject();
-                break;
-            default:
-                break;
+        int i = v.getId();
+        if (i == R.id.acceptCallButton) {
+            accept();
+
+        } else if (i == R.id.denyCallButton) {
+            reject();
+
+        } else {
         }
     }
 

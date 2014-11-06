@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -187,16 +186,16 @@ public class GroupDialogActivity extends BaseDialogActivity implements ReceiveFi
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                navigateToParent();
-                return true;
-            case R.id.action_attach:
-                attachButtonOnClick();
-                return true;
-            case R.id.action_group_details:
-                GroupDialogDetailsActivity.start(this, dialog.getDialogId());
-                return true;
+        int i = item.getItemId();
+        if (i == android.R.id.home) {
+            navigateToParent();
+            return true;
+        } else if (i == R.id.action_attach) {
+            attachButtonOnClick();
+            return true;
+        } else if (i == R.id.action_group_details) {
+            GroupDialogDetailsActivity.start(this, dialog.getDialogId());
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

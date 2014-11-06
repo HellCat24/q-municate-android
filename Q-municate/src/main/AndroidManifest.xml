@@ -27,21 +27,22 @@
         android:protectionLevel="signature" />
 
     <application
-        android:name="com.quickblox.q_municate.App"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        >
+        <!--android:name="com.quickblox.q_municate.App"-->
+        <!--android:theme="@style/AppTheme"-->
         <activity
             android:name="com.quickblox.q_municate.ui.splash.SplashActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:launchMode="singleInstance"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
+         <!--   <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name="com.quickblox.q_municate.ui.authorization.landing.LandingActivity"
@@ -153,9 +154,9 @@
         </receiver>
 
         <service android:name="com.quickblox.q_municate.GCMIntentService" />
-        <service
+        <!--<service
             android:name="com.quickblox.q_municate.service.QBService"
-            android:icon="@drawable/ic_launcher" />
+            android:icon="@drawable/ic_launcher" />-->
 
         <provider
             android:name="com.quickblox.q_municate.db.DatabaseProvider"

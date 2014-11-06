@@ -252,5 +252,6 @@
     <string name="error_playing_ringtone">Error during playing ringtone</string>
     <string name="error_playing_wrong_source">Wrong sound resource</string>
     <string name="ignore_content_description">ignored</string>
+    <string name="empty_friend_list">Your friend list is empty</string>
 
 </resources>

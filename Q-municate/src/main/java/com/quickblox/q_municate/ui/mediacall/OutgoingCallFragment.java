@@ -177,12 +177,11 @@ public abstract class OutgoingCallFragment extends BaseFragment implements View.
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.stopСallButton:
-                stopCall(true, STOP_TYPE.CLOSED);
-                break;
-            default:
-                break;
+        int i = v.getId();
+        if (i == R.id.stopСallButton) {
+            stopCall(true, STOP_TYPE.CLOSED);
+
+        } else {
         }
     }
 

@@ -177,20 +177,19 @@ public class ProfileActivity extends BaseLogeableActivity implements ReceiveFile
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.avatar_imageview:
-            case R.id.change_avatar_linearlayout:
-                changeAvatarOnClick();
-                break;
-            case R.id.change_fullname_relativelayout:
-                changeFullNameOnClick();
-                break;
-            case R.id.change_phone_relativelayout:
-                changePhoneOnClick();
-                break;
-            case R.id.change_status_relativelayout:
-                changeStatusOnClick();
-                break;
+        int i = view.getId();
+        if (i == R.id.avatar_imageview || i == R.id.change_avatar_linearlayout) {
+            changeAvatarOnClick();
+
+        } else if (i == R.id.change_fullname_relativelayout) {
+            changeFullNameOnClick();
+
+        } else if (i == R.id.change_phone_relativelayout) {
+            changePhoneOnClick();
+
+        } else if (i == R.id.change_status_relativelayout) {
+            changeStatusOnClick();
+
         }
     }
 

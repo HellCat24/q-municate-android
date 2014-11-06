@@ -193,10 +193,10 @@ public class InviteFriendsFragment extends BaseFragment implements CounterChange
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_next:
-                performActionNext();
-                break;
+        int i = item.getItemId();
+        if (i == R.id.action_next) {
+            performActionNext();
+
         }
         return true;
     }

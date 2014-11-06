@@ -192,19 +192,19 @@ public class PrivateDialogActivity extends BaseDialogActivity implements Receive
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                navigateToParent();
-                return true;
-            case R.id.action_attach:
-                attachButtonOnClick();
-                return true;
-            case R.id.action_audio_call:
-                callToUser(opponentFriend, WebRTC.MEDIA_STREAM.AUDIO);
-                return true;
-            case R.id.action_video_call:
-                callToUser(opponentFriend, WebRTC.MEDIA_STREAM.VIDEO);
-                return true;
+        int i = item.getItemId();
+        if (i == android.R.id.home) {
+            navigateToParent();
+            return true;
+        } else if (i == R.id.action_attach) {
+            attachButtonOnClick();
+            return true;
+        } else if (i == R.id.action_audio_call) {
+            callToUser(opponentFriend, WebRTC.MEDIA_STREAM.AUDIO);
+            return true;
+        } else if (i == R.id.action_video_call) {
+            callToUser(opponentFriend, WebRTC.MEDIA_STREAM.VIDEO);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
