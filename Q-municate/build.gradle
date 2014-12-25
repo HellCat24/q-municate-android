@@ -36,9 +36,9 @@ task nativeLibsToJar(type: Zip, description: 'create a jar archive of the native
     into 'lib/'
 }
 
-tasks.withType(Compile) {
+/*tasks.withType(Compile) {
     compileTask -> compileTask.dependsOn(nativeLibsToJar)
-}
+}*/
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -61,7 +61,7 @@ android {
         debug {
             debuggable rootProject.devDebug
             signingConfig signingConfigs.debug
-            zipAlign true
+            //zipAlign true
         }
     }
     packagingOptions {
