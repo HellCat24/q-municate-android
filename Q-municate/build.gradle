@@ -1,19 +1,19 @@
-//buildscript {
-//    repositories {
-//        maven { url 'http://download.crashlytics.com/maven' }
-//    }
-//
-//    dependencies {
-//        classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
-//    }
-//}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
 
-apply plugin: 'android-library'
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+    }
+}
+
+apply plugin: 'com.android.library'
 //apply plugin: 'crashlytics'
 
-//repositories {
-//    maven { url 'http://download.crashlytics.com/maven' }
-//}
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     compile fileTree(dir: "$buildDir/native-libs", include: 'native-libs.jar')
@@ -62,6 +62,11 @@ android {
             debuggable rootProject.devDebug
             signingConfig signingConfigs.debug
             //zipAlign true
+        }
+        release {
+            debuggable false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
         }
     }
     packagingOptions {
