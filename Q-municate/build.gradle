@@ -1,14 +1,4 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
-    }
-}
-
-apply plugin: 'com.android.library'
+apply plugin: 'android-library'
 //apply plugin: 'crashlytics'
 
 repositories {
@@ -61,12 +51,7 @@ android {
         debug {
             debuggable rootProject.devDebug
             signingConfig signingConfigs.debug
-            //zipAlign true
-        }
-        release {
-            debuggable false
             zipAlignEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt')
         }
     }
     packagingOptions {
